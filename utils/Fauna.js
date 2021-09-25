@@ -1,5 +1,9 @@
 const faunadb = require('faunadb');
-const faunaClient = new faunadb.Client({ secret: process.env.FAUNA_SECRET });
+const faunaClient = new faunadb.Client({ 
+    secret: process.env.FAUNA_SECRET,
+    domain: 'db.us.fauna.com',
+    scheme: 'https',
+});
 const q = faunadb.query;
 
 const getSnippets = async () => {
